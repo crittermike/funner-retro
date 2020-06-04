@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Funner Retro",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "funnerretro",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "It's more funner!",
+    "description": "The description of the application"
+  }
+}
