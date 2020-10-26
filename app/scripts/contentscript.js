@@ -14,10 +14,7 @@ watchForTimerStarted = () => {
   const callback = function(mutationsList, observer) {
     mutationsList.forEach((mutation) => {
       if (mutation.type === 'childList') {
-        if (timerRunning) {
-          alert("Time's up!");
-          timerRunning = false;
-        } else {
+        if (!timerRunning) {
           makeTimerDraggable();
         }
       }
@@ -40,15 +37,10 @@ addVoteToggle = () => {
   button.setAttribute('class', 'normal-button toggle-votes');
   sidebar.appendChild(button);
 
+  const body = document.querySelector('body');
+
   button.onclick = function() {
-    document.querySelectorAll('.message-votes').forEach(function(el) {
-      el.classList.toggle('show-vote-count');
-      el.classList.toggle('hide-vote-count');
-    });
-    document.querySelectorAll('.unvote-link').forEach(function(el) {
-      el.classList.toggle('show-vote-count');
-      el.classList.toggle('hide-vote-count');
-    });
+    body.classList.toggle('hide-own-votes')
   }
 };
 
@@ -66,12 +58,6 @@ makeTimerDraggable = () => {
     timerRunning = true;
   }, 1000);
   timer.setAttribute('draggable', 'true');
-  timer.style.fontSize = "200px";
-  timer.style.width = 'auto';
-  timer.style.padding = '20px';
-  timer.style.zIndex = '100';
-  timer.style.position = 'absolute';
-  timer.style.left = '50%';
   container = document.querySelector("#main");
 
   active = false;
