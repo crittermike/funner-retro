@@ -1,7 +1,7 @@
 {
   "name": "Funner-Retro",
-  "version": "0.0.1",
-  "description": "It&#39;s more funner!",
+  "version": "0.0.5",
+  "description": "It's more funner!",
   "scripts": {
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build"
